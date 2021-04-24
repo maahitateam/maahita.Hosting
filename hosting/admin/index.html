@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>māhita - admin</title>
+  <!-- stylesheets -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="notification"></div>
+  <!-- auth modals -->
+  <div class="auth open">
+    <div class="modal">
+      <p>
+        <img src="./img/logo.png" class="logo" alt="māhita logo">
+      </p>
+      <h2>Login</h2>
+      <form class="login" name="login">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <button>Login</button>
+        <p class="error"></p>
+      </form>
+    </div>
+  </div>
+  <header>
+    <nav>
+      <div class="navbar">
+        <div class="right">
+          <img src="./img/hlogo.png" alt="hlogo" class="hlogo">
+        </div>
+        <div class="left">
+          <a class='profile-email' id='profile-email'></a>
+          <a class="sign-out">sign out</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="new-request">
+    <div class="modal">
+      <h2>Create Session</h2>
+      <form class="add-session" name="add-session">
+        <input type="text" name="title" placeholder="Session Title" required>
+        <input type="text" name="theme" placeholder="Session Theme" required>
+        <input type="text" name="description" placeholder="Session Description" required>
+        <input type="datetime-local" name="date" placeholder="Scheduled Date" required>
+        <input type="text" name="presenter" placeholder="Presenter" required>
+        <button id="addSession" type="button" class="button">Submit Request</button>
+        <p class="error"></p>
+      </form>
+    </div>
+  </div>
+  <section class="content" id="app">
+    <div class="section-header">
+      <div class="header">
+        <h1>Available Sessions</h1>
+      </div>
+      <div class="section-action">
+        <button class='add-request' v-on:click="addSession($event)" id="btnAddSession">Add Sessions</button>
+      </div>
+    </div>
+    <ul class=" request-list">
+      <li v-for="doc in docs">
+        <div class="document">
+          <div class="section-1">
+            <div class="daymonth">
+              <div class="day">
+                {{ doc.day }}
+              </div>
+              <div class="month">
+                {{ doc.month }}
+              </div>
+            </div>
+            <div class="time">
+              {{ doc.time }}
+            </div>
+          </div>
+          <div class="section-2">
+            <div class="title">{{doc.title}}</div>
+            <div class="theme">{{doc.theme}}</div>
+            <div class="presenter">
+              <span>Presented by : </span> {{doc.presenter}}
+            </div>
+            <div class="status">
+              <span>Status : </span>
+              <span v-bind:class=getStatusString(doc.status)>{{getStatusString(doc.status)}}</span>
+            </div>
+            <div class="meeting">
+              <div class="meetingid" style="color:crimson;" v-bind:id="doc.id">
+                <a v-bind:class=getStatusString(doc.status) v-bind:href=doc.meetingLink>Meeting Link</a>
+              </div>
+            </div>
+          </div>
+          <div class="section-3">
+            <div class="actions" v-if="doc.status === 1">
+              <button v-on:click="startSession(doc.id, doc.title)">Start</button>
+            </div>
+            <div class="actions" v-if="doc.status === 1">
+              <button v-on:click="cancelSession(doc.id, doc.title)">Cancel</button>
+            </div>
+            <div class="actions" v-if="doc.status === 3">
+              <button v-on:click="stopSession(doc)">Stop</button>
+            </div>
+          </div>
+          <div class="section-4">
+            <div class="label">
+              <span>Session Id : {{doc.id}}</span>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <input type='hidden' id="hiddenToken">
+  <script src="/__/firebase/7.14.4/firebase-app.js"></script>
+  <script src="/__/firebase/7.14.4/firebase-auth.js"></script>
+  <script src="/__/firebase/7.14.4/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.14.4/firebase-functions.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script src="./js/api.js" type="module" async></script>
+  <script src="./js/storage.js" type="module" async></script>
+  <script src="js/app.js" type="module"></script>
+  <script src="js/auth.js" type="module"></script>
+  <script src="js/requests.js" type="module"></script>
+</body>
+
+</html>
