@@ -59,7 +59,6 @@
             if (!email.checkValidity()) {
                 return;
             }
-            console.log(email.value);
             const options = {
                 method: 'POST',
                 mode: 'no-cors',
