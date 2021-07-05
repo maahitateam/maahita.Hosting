@@ -1,371 +1,542 @@
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <title>māhita</title>
+    <meta name="description" content="māhita open school" />
+    <meta name="author" content="māhita Team" />
+    <meta name="description" content="māhita" />
+    <meta
+      name="keywords"
+      content="school volunteers, maahita, maahitha, open school, trainings, education, school"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans|Comfortaa"
+    />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/imagehover.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <style type="text/css">
+      .logo {
+        font-family: Comfortaa;
+        text-transform: lowercase;
+        font-weight: bolder !important;
+      }
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0">
-  <title>māhita</title>
-  <meta name="description" content="māhita open school">
-  <meta name="author" content="māhita Team">
-  <meta name="description" content="māhita">
-  <meta name="keywords" content="school volunteers, maahita, maahitha, open school, trainings, education, school">
-  <link rel="stylesheet" type="text/css"
-    href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans|Comfortaa">
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <style type="text/css">
-    .logo {
-      font-family: Comfortaa;
-      text-transform: lowercase;
-      font-weight: bolder !important;
-    }
+      .header {
+        font-size: 25px;
+        color: #634e40;
+      }
 
-    .header {
-      font-size: 25px;
-      color: #634e40;
-    }
+      .logo img {
+        max-width: 200px;
+        max-height: 50px;
+        width: auto;
+        height: auto;
+        margin-right: 4px;
+        vertical-align: baseline !important;
+      }
 
-    .logo img {
-      max-width: 200px;
-      max-height: 50px;
-      width: auto;
-      height: auto;
-      margin-right: 4px;
-      vertical-align: baseline !important;
-    }
+      ul.nav.navbar-nav.navbar-right {
+        margin-top: 15px !important;
+      }
 
-    ul.nav.navbar-nav.navbar-right {
-      margin-top: 15px !important;
-    }
+      .carousel-control {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 15%;
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0);
+        filter: alpha(opacity=50);
+        opacity: 0.5;
+      }
 
-    .carousel-control {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 15%;
-      font-size: 20px;
-      color: #fff;
-      text-align: center;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
-      background-color: rgba(0, 0, 0, 0);
-      filter: alpha(opacity=50);
-      opacity: .5;
-    }
+      .carousel-control.left,
+      .carousel-control.right {
+        background-repeat: repeat-x;
+        background-image: none;
+      }
 
-    .carousel-control.left,
-    .carousel-control.right {
-      background-repeat: repeat-x;
-      background-image: none;
-    }
+      .carousel-indicators li {
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid red;
+        border-radius: 10px;
+      }
 
-    .carousel-indicators li {
-      background-color: rgba(0, 0, 0, 0);
-      border: 1px solid red;
-      border-radius: 10px;
-    }
+      .carousel-indicators .active {
+        background-color: red;
+      }
+    </style>
+  </head>
 
-    .carousel-indicators .active {
-      background-color: red;
-    }
-  </style>
-</head>
+  <body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <section id="mobile-app" style="display: none"></section>
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            style="margin-top: 25px !important"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"
+            ><span class="logo header"><img src="./img/hlogo.png" /></span>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#about">About Us</a></li>
+            <li>
+              <a target="_" href="https://privacy.maahita.com">Privacy</a>
+            </li>
+            <li><a href="#contact">Contact us</a></li>
+            <li id="apple-marketting">
+              <a
+                target="_blank"
+                href="https://apps.apple.com/in/app/m%C4%81hita/id1513759832"
+              >
+                <img
+                  src="./img/apple.png"
+                  height="30px"
+                  alt="apple marketing logo"
+                />
+              </a>
+            </li>
+            <li id="android-marketting">
+              <a
+                target="_blank"
+                href="https://play.google.com/store/apps/details?id=com.mobile.maahita"
+                style="padding: 3px 0px 0px 0px"
+              >
+                <img
+                  src="./img/android.png"
+                  height="43px"
+                  alt="android marketting logo"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--/ Navigation bar-->
+    <!--Banner-->
+    <div class="banner">
+      <div class="bg-color">
+        <div class="container" style="margin-top: 30px">
+          <div class="row">
+            <div id="about" class="banner-text text-center">
+              <div class="text-border">
+                <h2 class="text-dec">Open School</h2>
+              </div>
+              <div class="intro-para text-center quote">
+                <p class="big-text">Learning Today . . . Leading Tomorrow.</p>
+                <p class="small-text">
+                  <span class="logo">māhita</span> is an online platform for the
+                  enthusiastic teachers who indulge in mentoring<br />
+                  budding minds across the globe
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Banner-->
+    <!--How māhita works-->
+    <section id="works">
+      <div class="container">
+        <div class="row" style="margin-top: 25px; margin-bottom: 25px">
+          <div class="feature-info">
+            <div class="fea">
+              <div class="col-md-4">
+                <div class="heading pull-right">
+                  <h4>Become <strong class="logo">māhita</strong> volunteer</h4>
+                  <p style="text-align: justify">
+                    Register with us using our mobile applications available on
+                    <a
+                      target="_blank"
+                      href="https://play.google.com/store/apps/details?id=com.mobile.maahita"
+                      >Android</a
+                    >
+                    and
+                    <a
+                      target="_blank"
+                      href="https://apps.apple.com/in/app/m%C4%81hita/id1513759832"
+                      >Apple</a
+                    >
+                    stores.
+                  </p>
+                </div>
+                <div class="fea-img pull-left">
+                  <i class="fa fa-handshake-o"></i>
+                </div>
+              </div>
+            </div>
+            <div class="fea">
+              <div class="col-md-4">
+                <div class="heading pull-right">
+                  <h4>Spend time in mentoring</h4>
+                  <p style="text-align: justify">
+                    <strong class="logo">māhita</strong> provides digital tools
+                    to help you in mentoring online to global students.
+                  </p>
+                </div>
+                <div class="fea-img pull-left">
+                  <i class="fa fa-desktop" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+            <div class="fea">
+              <div class="col-md-4">
+                <div class="heading pull-right">
+                  <h4>Give back to society</h4>
+                  <p style="text-align: justify">
+                    Give your valuable time to the students who are in need.
+                  </p>
+                </div>
+                <div class="fea-img pull-left">
+                  <i class="fa fa-users" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/How māhita works-->
+    <!--Organisations-->
+    <section id="organisations" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="orga-stru">
+                <h3>85%</h3>
+                <p>Say Excellent!!</p>
+                <i class="fa fa-male"></i>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="orga-stru">
+                <h3>10%</h3>
+                <p>We Want more!!</p>
+                <i class="fa fa-male"></i>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="orga-stru">
+                <h3>5%</h3>
+                <p>Became volunteers</p>
+                <i class="fa fa-male"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" id="latestsessiondiv"></div>
+        </div>
+      </div>
+    </section>
+    <!--/ Organisations-->
+    <!-- Caraseol-->
+    <section class="container caraseol" style="padding: 10px">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-<body>
-  <!--Navigation bar-->
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <section id="mobile-app" style="display: none;"></section>
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" style="margin-top: 25px !important;"
-          data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html"><span class="logo header"><img src="./img/hlogo.png"></span>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active" style="border: solid 1px #e5e5e5 !important">
+            <img
+              src="./carousel/volunteer.jpeg"
+              alt="volunteer of month"
+              style="width: 100%"
+            />
+          </div>
+
+          <div class="item" style="border: solid 1px #e5e5e5 !important">
+            <img
+              src="./carousel/musings.jpeg"
+              alt="musings"
+              style="width: 100%"
+            />
+          </div>
+
+          <div class="item" style="border: solid 1px #e5e5e5 !important">
+            <img
+              src="./carousel/musings1.jpeg"
+              alt="coming musings"
+              style="width: 100%"
+            />
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a
+          class="left carousel-control"
+          href="#myCarousel"
+          style="padding-top: 25%"
+          data-slide="prev"
+        >
+          <i
+            class="fa fa-chevron-circle-left"
+            style="color: red"
+            aria-hidden="true"
+          ></i>
+        </a>
+        <a
+          class="right carousel-control"
+          href="#myCarousel"
+          style="padding-top: 25%"
+          data-slide="next"
+        >
+          <i
+            class="fa fa-chevron-circle-right"
+            style="color: red"
+            aria-hidden="true"
+          ></i>
         </a>
       </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#about">About Us</a></li>
-          <li><a target="_" href="https://privacy.maahita.com">Privacy</a></li>
-          <li><a href="#contact">Contact us</a></li>
-          <li id="apple-marketting">
-            <a target="_blank" href="https://apps.apple.com/in/app/m%C4%81hita/id1513759832">
-              <img src="./img/apple.png" height="30px" alt="apple marketing logo">
+    </section>
+    <!-- / Caraseol-->
+    <!--Faculity member-->
+    <section id="faculity-member">
+      <div class="container">
+        <div class="row">
+          <div class="header-section text-center">
+            <h2>Our Inspiration</h2>
+            <hr class="bottom-line" />
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="pm-staff-profile-container">
+              <div class="pm-staff-profile-image-wrapper text-center">
+                <div class="pm-staff-profile-image">
+                  <img
+                    style="height: 150px !important; width: 150px !important"
+                    src="./img/apj.jpeg"
+                    alt="Abdul Kalam"
+                    class="img-thumbnail img-circle"
+                  />
+                </div>
+              </div>
+              <div class="pm-staff-profile-details text-center">
+                <p class="pm-staff-profile-name">A P J Abdul Kalam</p>
+                <p class="pm-staff-profile-bio">
+                  Look at the sky. we are not alone. The whole universe is
+                  friendly to us and conspires only to give the best to those
+                  who dream and work
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="pm-staff-profile-container">
+              <div class="pm-staff-profile-image-wrapper text-center">
+                <div class="pm-staff-profile-image">
+                  <img
+                    src="./img/swami.jpeg"
+                    alt="Swami Vivekananda"
+                    class="img-thumbnail img-circle"
+                  />
+                </div>
+              </div>
+              <div class="pm-staff-profile-details text-center">
+                <p class="pm-staff-profile-name">Swamy Vivekananda</p>
+                <p class="pm-staff-profile-bio">
+                  We want that education by which character is formed, strength
+                  of mind is increased, the intellect is expanded, and by which
+                  one can stand on one's own feet.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="pm-staff-profile-container">
+              <div class="pm-staff-profile-image-wrapper text-center">
+                <div class="pm-staff-profile-image">
+                  <img
+                    style="height: 150px !important; width: 150px !important"
+                    src="./img/jik.jpeg"
+                    alt="Jiddu Krishnamurthi"
+                    class="img-thumbnail img-circle"
+                  />
+                </div>
+              </div>
+              <div class="pm-staff-profile-details text-center">
+                <p class="pm-staff-profile-name">Jiddu Krishnamurthi</p>
+                <p class="pm-staff-profile-bio">
+                  You have to be your own master, all else is great teacher.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/ Faculity member-->
+    <!--Cta-->
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8" id="contact">
+            <h2 class="text-center">Get Involved</h2>
+            <p class="cta-2-txt">Leave your details, we will contact you.</p>
+            <div class="cta-2-form text-center">
+              <form id="workshop-newsletter-form">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="fullname"
+                    class="form-control"
+                    id="fullname"
+                    title="Please enter your full name"
+                    placeholder="Enter your full name"
+                    required=""
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="useremail"
+                    class="form-control"
+                    id="useremail"
+                    title="Please enter a valid email"
+                    placeholder="Enter your email"
+                    required=""
+                  />
+                </div>
+                <div class="form-group">
+                  <textarea
+                    name="comments"
+                    id="comments"
+                    class="form-control"
+                    title="Enter your comments"
+                    placeholder="Enter your comments"
+                    cols="30"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <input
+                    id="btnSubmit"
+                    class="btn btn-primary"
+                    style="outline: none"
+                    value="Subscribe"
+                    type="button"
+                  />
+                </div>
+              </form>
+            </div>
+            <p id="status" class="cta-2-txt" style="display: none"></p>
+          </div>
+          <div class="col-lg-2">
+            <ul class="nav navbar-nav media">
+              <li id="apple-marketting">
+                <a
+                  target="_blank"
+                  href="https://apps.apple.com/in/app/m%C4%81hita/id1513759832"
+                >
+                  <img
+                    src="./img/apple.png"
+                    height="30px"
+                    alt="apple marketing logo"
+                  />
+                </a>
+              </li>
+              <li id="android-marketting">
+                <a
+                  target="_blank"
+                  href="https://play.google.com/store/apps/details?id=com.mobile.maahita"
+                >
+                  <img
+                    src="./img/android.png"
+                    height="43px"
+                    alt="android marketting logo"
+                    style="margin-left: -7px"
+                  />
+                </a>
+              </li>
+              <li id="telegram-marketting">
+                <a
+                  target="_blank"
+                  href="https://t.me/joinchat/lwX6lNh5jG9mMTZl"
+                >
+                  <img
+                    src="./img/telegram.png"
+                    height="30px"
+                    alt="android marketting logo"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/ Cta-->
+    <!--Contact Us-->
+
+    <!--Contact Us-->
+    <!--Footer-->
+    <footer id="footer" class="footer">
+      <div class="container text-center" style="width: 100%; padding: 0px">
+        <!-- End newsletter-form -->
+        <ul class="social-links">
+          <li>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/mahita.mahita.1042"
+              ><i class="fa fa-facebook fa-fw"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.youtube.com/channel/UCL4i-Pm-42jyT7kvLTVmSKA"
+            >
+              <i class="fa fa-youtube-square fa-fw"></i>
             </a>
           </li>
-          <li id="android-marketting">
-            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.mobile.maahita"
-              style="padding:3px 0px 0px 0px;">
-              <img src="./img/android.png" height="43px" alt="android marketting logo">
+          <li>
+            <a target="_blank" href="https://t.me/joinchat/lwX6lNh5jG9mMTZl">
+              <i class="fa fa-telegram fa-fw"></i>
             </a>
           </li>
         </ul>
+        ©2021 All rights reserved by
+        <a style="font-family: Comfortaa" href="#">māhita</a>
+        <div class="credits"></div>
       </div>
-    </div>
-  </nav>
-  <!--/ Navigation bar-->
-  <!--Banner-->
-  <div class="banner">
-    <div class="bg-color">
-      <div class="container" style="margin-top:30px;">
-        <div class="row">
-          <div id="about" class="banner-text text-center">
-            <div class="text-border">
-              <h2 class="text-dec">Open School</h2>
-            </div>
-            <div class="intro-para text-center quote">
-              <p class="big-text">Learning Today . . . Leading Tomorrow.</p>
-              <p class="small-text"><span class="logo">māhita</span> is an online platform for the enthusiastic teachers
-                who indulge in
-                mentoring<br> budding minds across the globe</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--/ Banner-->
-  <!--How māhita works-->
-  <section id="works">
-    <div class="container">
-      <div class="row" style="margin-top:25px; margin-bottom:25px;">
-        <div class="feature-info">
-          <div class="fea">
-            <div class="col-md-4">
-              <div class="heading pull-right">
-                <h4>Become <strong class="logo">māhita</strong> volunteer</h4>
-                <p style="text-align: justify;">
-                  Register with us using our mobile applications available on
-                  <a target="_blank" href="https://play.google.com/store/apps/details?id=com.mobile.maahita">Android</a>
-                  and <a target="_blank" href="https://apps.apple.com/in/app/m%C4%81hita/id1513759832">Apple</a> stores.
-                </p>
-              </div>
-              <div class="fea-img pull-left">
-                <i class="fa fa-handshake-o"></i>
-              </div>
-            </div>
-          </div>
-          <div class="fea">
-            <div class="col-md-4">
-              <div class="heading pull-right">
-                <h4>Spend time in mentoring</h4>
-                <p style="text-align: justify;"><strong class="logo">māhita</strong> provides digital tools to help you
-                  in mentoring online to
-                  global students.</p>
-              </div>
-              <div class="fea-img pull-left">
-                <i class="fa fa-desktop" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-          <div class="fea">
-            <div class="col-md-4">
-              <div class="heading pull-right">
-                <h4>Give back to society</h4>
-                <p style="text-align: justify;">Give your valuable time to the students who are in need.</p>
-              </div>
-              <div class="fea-img pull-left">
-                <i class="fa fa-users" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/How māhita works-->
-  <!--Organisations-->
-  <section id="organisations" class="section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <div class="orga-stru">
-              <h3>85%</h3>
-              <p>Say Excellent!!</p>
-              <i class="fa fa-male"></i>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <div class="orga-stru">
-              <h3>10%</h3>
-              <p>We Want more!!</p>
-              <i class="fa fa-male"></i>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <div class="orga-stru">
-              <h3>5%</h3>
-              <p>Became volunteers</p>
-              <i class="fa fa-male"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6" id="latestsessiondiv">
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/ Organisations-->
-  <!-- Caraseol-->
-  <section class="container caraseol" style="padding:10px;">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active" style="border: solid 1px #e5e5e5 !important;">
-          <img src="./carousel/volunteer.jpeg" alt="volunteer of month" style="width:100%;">
-        </div>
-
-        <div class="item" style="border: solid 1px #e5e5e5 !important;">
-          <img src="./carousel/musings.jpeg" alt="musings" style="width:100%;">
-        </div>
-
-        <div class="item" style="border: solid 1px #e5e5e5 !important;">
-          <img src="./carousel/musings1.jpeg" alt="coming musings" style="width:100%;">
-        </div>
-      </div>
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" style="padding-top: 25%;" data-slide="prev">
-        <i class="fa fa-chevron-circle-left" style="color:red;" aria-hidden="true"></i>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" style="padding-top: 25%;" data-slide="next">
-        <i class="fa fa-chevron-circle-right" style="color:red;" aria-hidden="true"></i>
-      </a>
-    </div>
-  </section>
-  <!-- / Caraseol-->
-  <!--Faculity member-->
-  <section id="faculity-member">
-    <div class="container">
-      <div class="row">
-        <div class="header-section text-center">
-          <h2>Our Inspiration</h2>
-          <hr class="bottom-line">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img style="height: 150px !important; width: 150px !important;" src="./img/apj.jpeg" alt="Abdul Kalam"
-                  class="img-thumbnail img-circle">
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">A P J Abdul Kalam</p>
-              <p class="pm-staff-profile-bio">Look at the sky. we are not alone. The whole universe is friendly to us
-                and conspires only to give the best to those who dream and work</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img src="./img/swami.jpeg" alt="Swami Vivekananda" class="img-thumbnail img-circle">
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Swamy Vivekananda</p>
-              <p class="pm-staff-profile-bio">We want that education by which character is formed, strength of mind is
-                increased, the intellect is expanded, and by which one can stand on one's own feet. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="pm-staff-profile-container">
-            <div class="pm-staff-profile-image-wrapper text-center">
-              <div class="pm-staff-profile-image">
-                <img style="height: 150px !important; width: 150px !important;" src="./img/jik.jpeg"
-                  alt="Jiddu Krishnamurthi" class="img-thumbnail img-circle">
-              </div>
-            </div>
-            <div class="pm-staff-profile-details text-center">
-              <p class="pm-staff-profile-name">Jiddu Krishnamurthi</p>
-              <p class="pm-staff-profile-bio">
-                You have to be your own master, all else is great teacher.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/ Faculity member-->
-  <!--Cta-->
-  <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8" id="contact">
-          <h2 class="text-center">Get Involved</h2>
-          <p class="cta-2-txt">Leave your details, we will contact you.</p>
-          <div class="cta-2-form text-center">
-            <form id="workshop-newsletter-form">
-              <div class="form-group">
-                <input type="text" name="fullname" class="form-control" id="fullname"
-                  title="Please enter your full name" placeholder="Enter your full name" required="">
-              </div>
-              <div class="form-group">
-                <input type="email" name="useremail" class="form-control" id="useremail"
-                  title="Please enter a valid email" placeholder="Enter your email" required="">
-              </div>
-              <div class="form-group">
-                <textarea name="comments" id="comments" class="form-control" title="Enter your comments"
-                  placeholder="Enter your comments" cols="30" rows="5"></textarea>
-              </div>
-              <div class="form-group">
-                <input id="btnSubmit" class=" btn btn-primary" style="outline: none;;" value="Subscribe" type="button">
-              </div>
-            </form>
-          </div>
-          <p id="status" class="cta-2-txt" style="display: none;"></p>
-        </div>
-        <div class="col-lg-2"></div>
-      </div>
-    </div>
-  </section>
-  <!--/ Cta-->
-  <!--Contact Us-->
-
-  <!--Contact Us-->
-  <!--Footer-->
-  <footer id="footer" class="footer">
-    <div class="container text-center" style="width: 100%;padding: 0px;">
-      <!-- End newsletter-form -->
-      <ul class="social-links">
-        <li>
-          <a target="_blank" href="https://www.facebook.com/mahita.mahita.1042"><i class="fa fa-facebook fa-fw"></i></a>
-        </li>
-        <li>
-          <a target="_blank" href="https://www.youtube.com/channel/UCL4i-Pm-42jyT7kvLTVmSKA"><i
-              class="fa fa-youtube-square fa-fw"></i></a>
-        </li>
-      </ul>
-      ©2020 All rights reserved by <a style="font-family:Comfortaa" href="#">māhita</a>
-      <div class="credits">
-      </div>
-    </div>
-  </footer>
-  <!--/ Footer-->
-  <script src="./js/deep-link.js"></script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery.easing.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/custom.js"></script>
-</body>
-
+    </footer>
+    <!--/ Footer-->
+    <script src="./js/deep-link.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
 </html>
