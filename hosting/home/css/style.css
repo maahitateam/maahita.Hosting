@@ -834,10 +834,13 @@ div.det-p {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-
-.media {
-  margin-top: 100px !important;
-  text-align: center;
+a.market-link {
+  padding: 2px;
+}
+.connect {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
 }
 
 /***********************************
@@ -863,10 +866,6 @@ Responsive media queries
   .price-table .pricing-head h4 {
     font-size: 18px;
   }
-  .media {
-    margin-top: 100px !important;
-    text-align: center;
-  }
 }
 
 @media (min-width: 451px) and (max-width: 768px) {
@@ -885,6 +884,12 @@ Responsive media queries
 
   .price-table .pricing-head h4 {
     font-size: 18px;
+  }
+  .connect {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
   }
 }
 
@@ -978,8 +983,10 @@ Responsive media queries
   .navbar-default .navbar-nav > li > a {
     text-align: center;
   }
-  .media {
-    margin-top: 15px !important;
+  .connect {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
   }
 }
